@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coach de course fractionnée</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="timer-card">
+      <p class="eyebrow">Premières foulées</p>
+      <h1>Course fractionnée</h1>
+      <p class="intro">Prépare ta séance : une consigne vocale annonce chaque changement de phase.</p>
+
+      <form id="workout-form">
+        <div class="settings">
+          <div class="field">
+            <label for="warmup">Échauffement</label>
+            <div class="input-control">
+              <input id="warmup" name="warmup" type="number" min="0" step="0.5" value="5" />
+              <span>min</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="run">Course</label>
+            <div class="input-control">
+              <input id="run" name="run" type="number" min="1" step="1" value="1" required />
+              <span>min</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="walk">Marche / récupération</label>
+            <div class="input-control">
+              <input id="walk" name="walk" type="number" min="1" step="0.5" value="2" required />
+              <span>min</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="repetitions">Nombre de courses</label>
+            <div class="input-control">
+              <input id="repetitions" name="repetitions" type="number" min="1" step="1" value="8" required />
+              <span>fois</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cooldown">Retour au calme</label>
+            <div class="input-control">
+              <input id="cooldown" name="cooldown" type="number" min="0" step="0.5" value="5" />
+              <span>min</span>
+            </div>
+          </div>
+        </div>
+
+        <p id="countdown" class="countdown" aria-live="polite">Prêt pour ta séance ?</p>
+        <p id="status" class="status" role="status">Règle les durées, puis appuie sur Démarrer.</p>
+
+        <div class="actions">
+          <button id="start" class="primary" type="submit">Démarrer</button>
+          <button id="stop" class="secondary" type="button" disabled>Arrêter</button>
+        </div>
+      </form>
+      <p class="note">Garde cette page ouverte et le son de ton appareil activé pendant la séance.</p>
+    </main>
+  </body>
+</html>
